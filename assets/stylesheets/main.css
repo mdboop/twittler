@@ -64,4 +64,34 @@ header {
   font-size: 60px;
   padding : 45px;
   text-align: center;
+  margin : 10px;
+}
+
+/*
+================================
+Sidebar
+================================
+*/
+
+.sidebar {
+
+  float : left;
+  background-color : #c1ebdd;
+  width : 20%;
+}
+
+/*
+================================
+Tweet Stream
+================================
+*/
+
+.tweet-stream {
+
+  background-color : #dddddd;
+  width : 40%;
+  margin : 0 auto;
+  border-radius: 10px;
+  padding: 20px;
+
 }
