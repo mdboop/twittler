@@ -80,6 +80,16 @@ Sidebar
 
 /*
 ================================
+View Tweets Button
+================================
+*/
+
+.view-tweet {
+
+}
+
+/*
+================================
 Tweet Stream
 ================================
 */
@@ -87,7 +97,7 @@ Tweet Stream
 .tweet-stream {
 
   background-color : #dddddd;
-  width : 40%;
+  width : 500px;
   margin : 0 auto;
   border-radius: 10px;
   padding: 20px;
@@ -103,7 +113,7 @@ Tweet Box Typography
 .tweet-box {
   background-color : white;
   padding : 5px;
-  
+
 
 }
 

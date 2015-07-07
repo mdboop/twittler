@@ -20,7 +20,7 @@ $(document).ready(function(){
 
   addTweets();
 
-  $('button').click(addTweets);
+  $('.view-tweet').on('click', addTweets);
 
 });
 
