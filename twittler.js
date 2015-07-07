@@ -3,6 +3,7 @@ $(document).ready(function(){
 
         var index = streams.home.length - 1;
         while(index >= 0){
+          
           var tweet = streams.home[index];
           var $tweetBox = $('<section></section>').addClass('tweet-box');
           var $timeStamp = $('<span></span>').addClass('time-stamp');
