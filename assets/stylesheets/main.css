@@ -96,33 +96,56 @@ Tweet Stream
 
 /*
 ================================
-Tweet Box
+Tweet Box Typography
 ================================
 */
 
 .tweet-box {
   background-color : white;
-  padding : 4px;
+  padding : 5px;
+
 }
 
 .time-stamp {
-  text-align : right;
+  display : inline-block;
   padding : 4px;
+}
+
+.user-name {
+  display : inline-block;
+  padding : 05px 20px;
+}
+
+.tweet-message {
+  padding : 8px 20px;
+}
+
+/*
+================================
+Tweet Box Typography
+================================
+*/
+
+.time-stamp {
+  text-align : right;
   font-size: 10px;
   color : #aaaaaa;
 }
 
 .user-name {
+  text-align : left;
+  font-size : 18px;
+  color : black;
 
 }
 
 .tweet-message {
-
+  font-size : ;
 }
 
 /*
 ================================
-Typography
+Typefaces
 ================================
 */
 
@@ -132,3 +155,9 @@ Typography
   font-weight : 300;
 }
 
+.user-name,
+.tweet-message {
+
+  font-family : "Open Sans";
+
+}
