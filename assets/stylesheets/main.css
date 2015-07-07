@@ -102,7 +102,7 @@ View Tweets Button
   color : white;
   float : left;
   padding : 10px 0;
-  margin : 10px 25px;
+  margin : 10px 52px;
   border-radius : 8px;
   font-size : 18px;
   border : 0;
@@ -123,8 +123,8 @@ Tweet Stream
   background-color : #dddddd;
   width : 500px;
   float: left;
-  padding: 20px;
-  margin : 0 10px;
+  padding: 12px;
+  margin : 0 0 0 40px;
   border-bottom: 0 none;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
   border-radius : 8px;
@@ -146,7 +146,11 @@ Tweet Box
 
 .tweet-box:first {
   border-top-right-radius: 8px;
-  
+
+}
+
+.tweet-box:hover {
+  background-color : #F5F7FD;
 }
 
 .time-stamp {
@@ -162,6 +166,8 @@ Tweet Box
 .tweet-message {
   padding : 8px 20px;
 }
+
+
 
 /*
 ================================

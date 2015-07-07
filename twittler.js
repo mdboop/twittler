@@ -16,11 +16,21 @@ var addTweets = function() {
   }
 };
 
+var userStream = function() {
+  $('.tweet-stream').hide();
+  var user = $(this).text().split('');
+  user.shift();
+  user = user.join('');
+
+};
+
 $(document).ready(function(){
 
   addTweets();
 
   $('.view-tweet').on('click', addTweets);
+
+  $('.user-name').on('click', userStream);
 
 });
 
