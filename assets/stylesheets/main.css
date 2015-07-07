@@ -48,12 +48,22 @@ table {
 
 /*
 ================================
+Background
+================================
+*/
+
+body {
+  background-color : #dddddd;
+}
+
+/*
+================================
 Header
 ================================
 */
 
 header {
-  background-color : #aaaaaa;
+  background-color : #2C3B63;
 }
 
 .main-header {
@@ -87,7 +97,7 @@ View Tweets Button
 
 .view-tweet {
   width : 500px;
-  background-color : #dddddd;
+  background-color : #595B69;
   display : block;
   color : white;
   float : left;
@@ -113,24 +123,30 @@ Tweet Stream
   background-color : #dddddd;
   width : 500px;
   float: left;
-  border-radius: 10px;
   padding: 20px;
   margin : 0 10px;
-  border : none;
+  border-bottom: 0 none;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
+  border-radius : 8px;
 
 }
 
 /*
 ================================
-Tweet Box Typography
+Tweet Box 
 ================================
 */
 
 .tweet-box {
   background-color : white;
   padding : 5px;
+  margin : 2px 0;
 
+}
 
+.tweet-box:first {
+  border-top-right-radius: 8px;
+  
 }
 
 .time-stamp {
