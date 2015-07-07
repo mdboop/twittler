@@ -1,9 +1,9 @@
 var lastIndex = 0; 
 
-var addTweets = function() {
-  var $tweetStream = $('.tweet-stream');
-  for (var i = lastIndex; i < streams.home.length; i+= 1) {
-    var tweet = streams.home[i];
+var addTweets = function(stream, streamClass) {
+  var $tweetStream = $(streamClass);
+  for (var i = lastIndex; i < stream.length; i+= 1) {
+    var tweet = stream[i];
     var $tweetBox = $('<section></section>').addClass('tweet-box');
     var $timeStamp = $('<span></span>').addClass('time-stamp');
     var $tweetUser = $('<span></span>').addClass('user-name');
@@ -26,9 +26,11 @@ var userStream = function() {
 
 $(document).ready(function(){
 
-  addTweets();
+  addTweets(streams.home, '.tweet-stream');
 
-  $('.view-tweet').on('click', addTweets);
+  $('.view-tweet').on('click', function() {
+    addTweets(streams.home, '.tweet-stream');
+  });
 
   $('.user-name').on('click', userStream);
 
