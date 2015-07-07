@@ -57,8 +57,6 @@ header {
 }
 
 .main-header {
-  font-family : "Open Sans", sans-serif;
-  font-weight : 300;
   letter-spacing: 16px;
   color : white;
   font-size: 60px;
@@ -95,3 +93,42 @@ Tweet Stream
   padding: 20px;
 
 }
+
+/*
+================================
+Tweet Box
+================================
+*/
+
+.tweet-box {
+  background-color : white;
+  padding : 4px;
+}
+
+.time-stamp {
+  text-align : right;
+  padding : 4px;
+  font-size: 10px;
+  color : #aaaaaa;
+}
+
+.user-name {
+
+}
+
+.tweet-message {
+
+}
+
+/*
+================================
+Typography
+================================
+*/
+
+.main-header,
+.time-stamp {
+  font-family : "Open Sans";
+  font-weight : 300;
+}
+
