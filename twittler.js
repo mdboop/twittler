@@ -1,13 +1,12 @@
 $(document).ready(function(){
-        var $body = $('body');
-        $body.html('');
+        var $tweetStream = $('.tweet-stream');
 
         var index = streams.home.length - 1;
         while(index >= 0){
           var tweet = streams.home[index];
           var $tweet = $('<div></div>');
           $tweet.text('@' + tweet.user + ': ' + tweet.message);
-          $tweet.appendTo($body);
+          $tweet.appendTo($tweetStream);
           index -= 1;
         }
 
