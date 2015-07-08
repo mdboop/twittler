@@ -1,6 +1,4 @@
-//Track tweets displayed for both home and user streams.
 var mainIndex = 0; 
-var userIndex = 0;
 
 var createTweet = function(tweet, stream) {
   var $tweetStream = $(stream);
@@ -15,7 +13,7 @@ var createTweet = function(tweet, stream) {
   $tweetBox.prependTo($tweetStream);
 };
 
-var displayHomeStream = function() {
+var updateHomeStream = function() {
 
   streams.home.forEach(function(value, index, collection) {
     index = mainIndex;
@@ -33,18 +31,25 @@ var displayUserStream = function() {
   user = user.join('');
   
   streams.users[user].forEach(function(value, index, collection) {
-    index = userIndex;
     createTweet(collection[index], '.user-stream');
-    userIndex = index + 1;
   });
   $('.user-stream').show();
+  $('.view-home').show();
+
+};
+
+var displayHomeStream = function() {
+  $('.user-stream').hide();
+  $('.tweet-stream').show();
+  $('.view-home').hide();
 };
 
 $(document).ready(function(){
 
-  displayHomeStream();
-  $('.view-tweet').on('click', displayHomeStream);
-  $('.user-name').on('click', displayUserStream);
+  updateHomeStream();
+  $('.view-tweet').on('click', updateHomeStream);
+  $(document.body).on('click', '.user-name', displayUserStream);
+  $('.view-home').on('click', displayHomeStream);
 
 });
 

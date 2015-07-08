@@ -91,10 +91,15 @@ Sidebar
 
 /*
 ================================
-View Tweets Button
+Buttons
 ================================
 */
 
+.view-home {
+  display : none;
+}
+
+.view-home,
 .view-tweet {
   width : 500px;
   background-color : #595B69;
@@ -146,11 +151,6 @@ Tweet Box
   background-color : white;
   padding : 5px;
   margin : 2px 0;
-
-}
-
-.tweet-box:first {
-  border-top-right-radius: 8px;
 
 }
 
