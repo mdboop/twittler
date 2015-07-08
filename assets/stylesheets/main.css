@@ -118,6 +118,10 @@ Tweet Stream
 ================================
 */
 
+.user-stream {
+  display : none;
+}
+
 .user-stream,
 .tweet-stream {
 
@@ -162,6 +166,10 @@ Tweet Box
 .user-name {
   display : inline-block;
   padding : 05px 20px;
+}
+
+.user-name:hover {
+  cursor : pointer;
 }
 
 .tweet-message {
