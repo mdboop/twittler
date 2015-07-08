@@ -53,7 +53,7 @@ Background
 */
 
 body {
-  background-color : #dddddd;
+  background-color : #21b2fe;
 }
 
 /*
@@ -63,12 +63,12 @@ Header
 */
 
 header {
-  background-color : #2C3B63;
+  background-color : #FCFBE3;
 }
 
 .main-header {
   letter-spacing: 16px;
-  color : white;
+  color : #755C3B;
   font-size: 60px;
   padding : 45px;
   text-align: center;
@@ -102,15 +102,25 @@ Buttons
 .view-home,
 .view-tweet {
   width : 500px;
-  background-color : #595B69;
   display : block;
+  background-color : #21b2fe;
   color : white;
   float : left;
   padding : 10px 0;
   margin : 10px 52px;
+  border-style : solid;
+  border-color : white;
+  border-width : 1px;
   border-radius : 8px;
   font-size : 18px;
-  border : 0;
+}
+
+.view-home:hover,
+.view-tweet:hover {
+
+  background-color: white;
+  border-color : #3D3D3D;
+  color : #3D3D3D;
 }
 
 .view-tweet:focus {
@@ -130,14 +140,11 @@ Tweet Stream
 .user-stream,
 .tweet-stream {
 
-  background-color : #dddddd;
   width : 500px;
   float: left;
   padding: 12px;
   margin : 0 0 0 40px;
-  border-bottom: 0 none;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
-  border-radius : 8px;
+ 
 
 }
 
@@ -148,9 +155,15 @@ Tweet Box
 */
 
 .tweet-box {
+
   background-color : white;
   padding : 5px;
-  margin : 1px 0;
+  margin : 2px 0;
+
+}
+
+.tweet-box:first {
+  border-top-right-radius: 8px;
 
 }
 
