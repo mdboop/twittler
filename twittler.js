@@ -1,4 +1,5 @@
-var lastIndex = 0; 
+var mainIndex = 0; 
+var userIndex = 0;
 
 var createTweet = function(tweet, stream) {
   var $tweetStream = $(stream);
@@ -14,33 +15,34 @@ var createTweet = function(tweet, stream) {
 };
 
 var displayAll = function() {
-  streams.home.forEach(function(tweet, index) {
-    createTweet(tweet, '.tweet-stream');
-    lastIndex = index + 1;
+
+  streams.home.forEach(function(value, index, collection) {
+    index = mainIndex;
+    createTweet(collection[index], '.tweet-stream');
+    mainIndex = index + 1;
   });
 };
 
-var userStream = function() {
+var displayUserStream = function() {
+  
   $('.tweet-stream').hide();
+  $('.user-stream').empty();
   var user = $(this).text().split('');
   user.shift();
   user = user.join('');
   
-  streams.users[user].forEach(function(tweet, index) {
-    lastIndex = i + 1;
+  streams.users[user].forEach(function(value, index, collection) {
+    index = userIndex;
+    createTweet(collection[index], '.user-stream');
+    userIndex = index + 1;
   });
-
 };
 
 $(document).ready(function(){
 
   displayAll();
-
-  $('.view-tweet').on('click', function() {
-    displayAll();
-  });
-
-  $('.user-name').on('click', userStream);
+  $('.view-tweet').on('click', displayAll);
+  $('.user-name').on('click', displayUserStream);
 
 });
 
