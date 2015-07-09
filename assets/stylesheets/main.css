@@ -68,7 +68,7 @@ header {
 
 .main-header {
   letter-spacing: 16px;
-  color : #755C3B;
+  color : #382313;
   font-size: 60px;
   padding : 45px;
   text-align: center;
@@ -107,7 +107,7 @@ Buttons
   color : white;
   float : left;
   padding : 10px 0;
-  margin : 10px 52px;
+  margin : 5px 52px 0 52px;
   border-style : solid;
   border-color : white;
   border-width : 1px;
@@ -142,8 +142,8 @@ Tweet Stream
 
   width : 500px;
   float: left;
-  padding: 12px;
-  margin : 0 0 0 40px;
+  padding: 5px;
+  margin : 0 0 0 48px;
  
 
 }
@@ -154,16 +154,21 @@ Tweet Box
 ================================
 */
 
+.tweet-box:first-child {
+  border: 5px solid white;
+  border-radius : 8px 8px 0 0 ;
+} 
+
+.tweet-box:last-child {
+  border: 5px solid white;
+  border-radius : 0 0 8px 8px ;
+}
+
 .tweet-box {
 
   background-color : white;
   padding : 5px;
   margin : 2px 0;
-
-}
-
-.tweet-box:first {
-  border-top-right-radius: 8px;
 
 }
 
