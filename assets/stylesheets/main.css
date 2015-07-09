@@ -96,11 +96,11 @@ Header
 */
 
 input {
-  loat : left;
-  margin : 5px 52px 0 52px;
+  float : left;
+  margin : 5px 5px 0 52px;
   border: 1px solid #999;
   border-radius: 8px;
-  width: 480px;
+  width: 420px;
   padding : 8px;
   font-size : 14pt;
 
@@ -116,6 +116,21 @@ input:focus {
 Buttons
 ================================
 */
+
+.tweet-submit {
+  float : left;
+  background-color : white;
+  border-radius : 8px;
+  border: 1px solid #999;
+  height : 40px;
+  width : 60px;
+  margin : 5px 0;
+  font-style : "Open Sans";
+}
+
+.tweet-submit:focus {
+  outline : none;
+}
 
 .view-home {
   display : none;

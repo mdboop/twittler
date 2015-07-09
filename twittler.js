@@ -1,3 +1,5 @@
+
+//Add visitor username and setup data structure.
 var visitor = prompt("Hello, stranger.");
 streams.users[visitor] = [];
 
@@ -59,6 +61,15 @@ var hideOldTweets = function() {
   $('.tweet-box:gt(25)').hide();
 };
 
+var postTweet = function() {
+  var message = $('.tweet-input').val();
+    if(message !== '') {
+      writeTweet(message);
+      updateHomeStream();
+      $('.tweet-input').val('');
+    }
+};
+
 $(document).ready(function(){
 
   updateHomeStream();
@@ -67,23 +78,17 @@ $(document).ready(function(){
   $(document.body).on('click', '.user-name', displayUserStream);
   $('.view-home').on('click', displayHomeStream);
   $('.tweet-submit').click(function(event) {
-    var message = $('.tweet-input').val();
-    writeTweet(message);
-    updateHomeStream();
-    $('.tweet-input').val('');
+    postTweet();
     event.preventDefault();
   });
 
- /* $('input').keyup(function(event) {
+  $('.tweet-input').keyup(function(event) {
         var keycode = (event.keyCode ? event.keyCode : event.which);
           if (keycode == '13') {
-            var message = $(this).val();
-            writeTweet(message);
+            postTweet();
           }         
     event.preventDefault();
   });
-*/
-
 
   setInterval(function() {
     hideOldTweets();
