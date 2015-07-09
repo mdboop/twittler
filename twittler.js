@@ -46,9 +46,9 @@ var displayUserStream = function() {
 };
 
 var displayHomeStream = function() {
-  $('.user-stream').hide();
+  $('.user-stream').fadeOut();
   updateHomeStream();
-  $('.tweet-stream').show();
+  $('.tweet-stream').fadeIn();
   $('.view-home').hide();
 };
 

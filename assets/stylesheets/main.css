@@ -91,6 +91,31 @@ Sidebar
 
 /*
 ================================
+Header
+================================
+*/
+
+form {
+  float : left;
+  margin : 5px 52px 0 52px;
+}
+
+input[type=text] {
+  border: 1px solid #999;
+  border-radius: 8px;
+  width: 480px;
+  padding : 8px;
+  font-size : 14pt;
+
+  -webkit-appearance: none;
+}
+
+input:focus {
+  outline : none;
+}
+
+/*
+================================
 Buttons
 ================================
 */
@@ -161,7 +186,7 @@ Tweet Box
 
 .tweet-box:last-child {
   border: 5px solid white;
-  border-radius : 0 0 8px 8px ;
+  border-radius : 0 0 8px 8px;
 }
 
 .tweet-box {
