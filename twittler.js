@@ -53,8 +53,7 @@ var displayHomeStream = function() {
 };
 
 var hideOldTweets = function() {
-  if($()) {
-  }
+  $('.tweet-box:gt(25)').hide();
 };
 
 var displayStreamsCount = function() {
@@ -63,7 +62,7 @@ var displayStreamsCount = function() {
 
 var displayTweetCount = function() {
   $('.display-count').text($('.tweet-stream').children().length);
-}
+};
 
 $(document).ready(function(){
 
@@ -76,6 +75,7 @@ $(document).ready(function(){
   setInterval(function() {
     displayStreamsCount();
     displayTweetCount();
+    hideOldTweets();
   }, 1000);
 
 });
