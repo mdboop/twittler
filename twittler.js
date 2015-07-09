@@ -1,3 +1,6 @@
+var visitor = prompt("Hello, stranger.");
+streams.users[visitor] = [];
+
 var newestIndex = 0; 
 
 var newTweets = function() {
@@ -56,14 +59,6 @@ var hideOldTweets = function() {
   $('.tweet-box:gt(25)').hide();
 };
 
-var displayStreamsCount = function() {
-  $('.streams-count').text((streams.home.length));
-};
-
-var displayTweetCount = function() {
-  $('.display-count').text($('.tweet-stream').children().length);
-};
-
 $(document).ready(function(){
 
   updateHomeStream();
@@ -71,10 +66,26 @@ $(document).ready(function(){
   $('.view-tweet').on('click', updateHomeStream);
   $(document.body).on('click', '.user-name', displayUserStream);
   $('.view-home').on('click', displayHomeStream);
+  $('.tweet-submit').click(function(event) {
+    var message = $('.tweet-input').val();
+    writeTweet(message);
+    updateHomeStream();
+    $('.tweet-input').val('');
+    event.preventDefault();
+  });
+
+ /* $('input').keyup(function(event) {
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+          if (keycode == '13') {
+            var message = $(this).val();
+            writeTweet(message);
+          }         
+    event.preventDefault();
+  });
+*/
+
 
   setInterval(function() {
-    displayStreamsCount();
-    displayTweetCount();
     hideOldTweets();
   }, 1000);
 

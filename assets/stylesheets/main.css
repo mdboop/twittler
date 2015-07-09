@@ -95,12 +95,9 @@ Header
 ================================
 */
 
-form {
-  float : left;
+input {
+  loat : left;
   margin : 5px 52px 0 52px;
-}
-
-input[type=text] {
   border: 1px solid #999;
   border-radius: 8px;
   width: 480px;
