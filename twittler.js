@@ -3,6 +3,7 @@
 var visitor = prompt("Hello, stranger.");
 streams.users[visitor] = [];
 
+//Keep master index of last tweet displayed and use to make working array for updating tweets.
 var newestIndex = 0; 
 
 var newTweets = function() {
@@ -61,6 +62,11 @@ var hideOldTweets = function() {
   $('.tweet-box:gt(25)').hide();
 };
 
+var countNewTweets = function() {
+  var newTweets = streams.home.length - newestIndex || '';
+  $('.tweet-count').text(newTweets);
+};
+
 var postTweet = function() {
   var message = $('.tweet-input').val();
     if(message !== '') {
@@ -73,6 +79,7 @@ var postTweet = function() {
 $(document).ready(function(){
 
   updateHomeStream();
+  $('.view-home').hide();
 
   $('.view-tweet').on('click', updateHomeStream);
   $(document.body).on('click', '.user-name', displayUserStream);
@@ -92,6 +99,7 @@ $(document).ready(function(){
 
   setInterval(function() {
     hideOldTweets();
+    countNewTweets();
   }, 1000);
 
 });
