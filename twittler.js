@@ -5,6 +5,7 @@ streams.users[visitor] = [];
 
 //Keep master index of last tweet displayed and use to make working array for updating tweets.
 var newestIndex = 0; 
+//Keep running count of all hashtag uses.
 var trendTracker = {};
 
 var trendCounter = function(message) {
@@ -49,7 +50,6 @@ var trendPoster = function() {
   findLargest();
   findLargest();
   findLargest();
-  console.log(topThree);
   $('.trending').empty();
   for(var key in topThree) {
     var $hashtag = $('<li></li>').addClass('hashtag');
@@ -90,7 +90,6 @@ var displayUserStream = function() {
   
   $('.tweet-stream').hide();
   $('.user-stream').empty();
-  console.log($(this).data());
   var user = $(this).text().split('');
   user.shift();
   user = user.join('');
@@ -162,7 +161,9 @@ $(document).ready(function(){
     $('.time-stamp').each(function(i) {
       $(this).text(moment($(this).attr('post-time')).fromNow());
     });
-  }, 6000);
+  }, 60000);
+
+
 
 });
 
