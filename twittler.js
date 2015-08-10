@@ -5,6 +5,54 @@ streams.users[visitor] = [];
 
 //Keep master index of last tweet displayed and use to make working array for updating tweets.
 var newestIndex = 0; 
+var trendTracker = {};
+
+var trendCounter = function(message) {
+  var messageArray = message.split('');
+  var hashtag = null;
+  for(var i = 0; i < messageArray.length; i+= 1) {
+    if(messageArray[i] === "#") {
+      hashtag = messageArray.slice(i, messageArray.length).join('');
+    }
+  }
+  if(hashtag === null) {
+    return;
+  } else {
+    if(trendTracker.hasOwnProperty(hashtag)) {
+      trendTracker[hashtag] += 1;
+    } else {
+      trendTracker[hashtag] = 0;
+      trendTracker[hashtag] += 1;
+    }
+  }
+};
+
+var trendPoster = function() {
+  var topThree = {};
+  var largest = null;
+  var lastKey = null;
+  var findLargest = function () {
+    for(var key in trendTracker) {
+      if(lastKey === null) {
+        lastKey = key;
+      } else {
+        if(trendTracker[key] >= trendTracker[lastKey] && !topThree.hasOwnProperty[key]) {
+          largest = key;
+        }
+      }
+    }
+    topThree[largest] = largest;
+  };
+  findLargest();
+  findLargest();
+  findLargest();
+  $('.trending').empty();
+  for(var key in topThree) {
+    var $hashtag = $('<li></li>').addClass('hashtag');
+    $hashtag.text(key);
+    $($hashtag).appendTo('.trending');
+  }
+};
 
 var newTweets = function() {
   var tweets = streams.home.slice(newestIndex);
@@ -24,6 +72,7 @@ var createTweet = function(tweet, stream) {
   $timeStamp.text(moment(tweet.created_at).format("dddd, MMMM Do YYYY, h:mm:ss a")).appendTo($tweetBox);
   $tweetMessage.text(tweet.message).appendTo($tweetBox);
   $tweetBox.prependTo($tweetStream);
+  trendCounter(tweet.message);
 };
 
 var updateHomeStream = function() {
@@ -76,6 +125,7 @@ var postTweet = function() {
     }
 };
 
+
 $(document).ready(function(){
 
   updateHomeStream();
@@ -101,6 +151,8 @@ $(document).ready(function(){
     hideOldTweets();
     countNewTweets();
   }, 1000);
+
+  setInterval(trendPoster, 5000);
 
 });
 

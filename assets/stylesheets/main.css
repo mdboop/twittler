@@ -80,6 +80,7 @@ Sidebar
 ================================
 */
 
+
 .sidebar {
 
   float : left;
@@ -87,6 +88,15 @@ Sidebar
   width : 300px;
   height : 900px;
   padding : 20px;
+}
+
+h3 {
+  margin: 0 0 20px 0;
+}
+
+.trending {
+  margin: 0 0 0 30px;
+  list-style-type: circle;
 }
 
 /*
@@ -141,6 +151,7 @@ Buttons
   width : 500px;
   display : block;
   background-color : #21b2fe;
+
   color : white;
   float : left;
   padding : 10px 0;
@@ -262,6 +273,8 @@ Typefaces
 ================================
 */
 
+h3,
+.trending,
 .main-header,
 .time-stamp {
   font-family : "Open Sans";
@@ -273,5 +286,14 @@ Typefaces
 .tweet-message {
 
   font-family : "Open Sans";
+
+}
+
+h3 {
+  font-size: 2em;
+  font-weight: 500;
+}
+
+.trending {
 
 }
