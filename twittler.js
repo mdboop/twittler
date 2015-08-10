@@ -29,23 +29,27 @@ var trendCounter = function(message) {
 
 var trendPoster = function() {
   var topThree = {};
-  var largest = null;
-  var lastKey = null;
   var findLargest = function () {
+    var largest = null;
+    var lastKey = null;
     for(var key in trendTracker) {
       if(lastKey === null) {
         lastKey = key;
       } else {
-        if(trendTracker[key] >= trendTracker[lastKey] && !topThree.hasOwnProperty[key]) {
+        if(trendTracker[key] >= trendTracker[lastKey] && !topThree.hasOwnProperty(key)) {
           largest = key;
         }
+        lastKey = key;
       }
     }
-    topThree[largest] = largest;
+    if(largest !== null) {
+      topThree[largest] = largest;
+    }
   };
   findLargest();
   findLargest();
   findLargest();
+  console.log(topThree);
   $('.trending').empty();
   for(var key in topThree) {
     var $hashtag = $('<li></li>').addClass('hashtag');
