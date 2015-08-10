@@ -73,7 +73,7 @@ var createTweet = function(tweet, stream) {
   var $tweetMessage = $('<article></article>').addClass('tweet-message');
   
   $tweetUser.text('@' + tweet.user).appendTo($tweetBox);
-  $timeStamp.text(moment(tweet.created_at).format("dddd, MMMM Do YYYY, h:mm:ss a")).appendTo($tweetBox);
+  $timeStamp.text(moment(tweet.created_at).fromNow()).attr('post-time', tweet.created_at).appendTo($tweetBox);
   $tweetMessage.text(tweet.message).appendTo($tweetBox);
   $tweetBox.prependTo($tweetStream);
   trendCounter(tweet.message);
@@ -157,6 +157,12 @@ $(document).ready(function(){
   }, 1000);
 
   setInterval(trendPoster, 5000);
+
+  setInterval(function() {
+    $('.time-stamp').each(function(i) {
+      $(this).text(moment($(this).attr('post-time')).fromNow());
+    });
+  }, 6000);
 
 });
 
