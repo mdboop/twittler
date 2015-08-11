@@ -85,7 +85,7 @@ Sidebar
 .sidebar {
 
   float : left;
-  background-color : #c1ebdd;
+  background-color : #272727;
   width : 250px;
   height : 60vh;
   padding : 20px;
@@ -94,10 +94,12 @@ Sidebar
 }
 
 h3 {
+  color:white;
   margin: 0 0 20px 0;
 }
 
 .trending {
+  color: white;
   margin: 0 0 0 30px;
   list-style-type: circle;
   line-height: 1.5em;

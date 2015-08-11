@@ -7,6 +7,7 @@ streams.users[visitor] = [];
 var newestIndex = 0; 
 //Keep running count of all hashtag uses.
 var trendTracker = {};
+var tweetsShowing = 25;
 
 var trendCounter = function(message) {
   var messageArray = message.split('');
@@ -36,8 +37,9 @@ var trendPoster = function() {
     for(var key in trendTracker) {
       if(lastKey === null) {
         lastKey = key;
+        largest = key;
       } else {
-        if(trendTracker[key] >= trendTracker[lastKey] && !topThree.hasOwnProperty(key)) {
+        if(trendTracker[key] > trendTracker[lastKey] && !topThree.hasOwnProperty(key)) {
           largest = key;
         }
         lastKey = key;
@@ -84,6 +86,7 @@ var updateHomeStream = function() {
   tweets.forEach(function(tweet) {
     createTweet(tweet, '.tweet-stream');
   });
+  hideOldTweets();
 };
 
 var displayUserStream = function() {
@@ -110,10 +113,6 @@ var displayHomeStream = function() {
   $('.view-home').hide();
 };
 
-var hideOldTweets = function() {
-  $('.tweet-box:gt(25)').hide();
-};
-
 var countNewTweets = function() {
   var newTweets = streams.home.length - newestIndex || '';
   $('.tweet-count').text(newTweets);
@@ -128,6 +127,14 @@ var postTweet = function() {
     }
 };
 
+var hideOldTweets = function() {
+  $('.tweet-box:gt(25)').hide();
+};
+
+var loadOldTweets = function() {
+   tweetsShowing += 10;
+  $('.tweet-box:gt(25):lt(' + tweetsShowing + ')').fadeIn();
+};
 
 $(document).ready(function(){
 
@@ -150,8 +157,14 @@ $(document).ready(function(){
     event.preventDefault();
   });
 
+  $(window).scroll(function () { 
+   if ($(window).scrollTop() >= $(document).height() - $(window).height() - 10) {
+    setTimeout(loadOldTweets, 1000);
+   }
+});
+
+
   setInterval(function() {
-    hideOldTweets();
     countNewTweets();
   }, 1000);
 
